@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+}
+
+html,
+body {
+  --black: hsl(240, 6%, 13%);
+  --gray: hsl(240, 9%, 89%);
+
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  display: grid;
+  place-items: center;
+}
+
+main {
+  background: url(images/background.svg) no-repeat center/cover;
+  min-height: 812px;
+  width: 100vw;
+  height: 100vh;
+}
+
+/*Caso ultraprasse 720p faça esse código a baixo ~~ TABLET*/
+@media (min-width: 720px) {
+  main {
+    background: url(images/background.svg) no-repeat center/cover;
+    width: 30vw;
+    height: 100vh;
+  }
+}
+/*Caso ultraprasse 720p faça esse código a baixo ~~ DESKTOP*/
+@media (min-width: 960px) {
+  main {
+    background: url(images/desktop.svg) no-repeat center/cover;
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+  }
+  .container {
+    margin-top: 14vw;
+  }
+}
+.container {
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: var(--gray);
+}
+
+.avatar {
+  width: 10rem;
+  margin: 11.5rem auto 0;
+  position: relative;
+}
+.avatar span {
+  position: absolute;
+  top: -15px;
+  left: -25px;
+  z-index: 1;
+}
+/* Pegando a primeira imagem*/
+.avatar > img {
+  width: 10rem;
+  height: 11.5rem;
+  object-fit: cover;
+  clip-path: polygon(50% 0, 100% 23%, 100% 73%, 50% 100%, 0 73%, 0 23%);
+}
+
+#seloRocketseat {
+  cursor: pointer;
+  animation: rotate 12s infinite;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+h1 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+a {
+  margin-top: 0.25rem;
+  text-decoration: none;
+  color: rgba(255, 213, 134, 0.986);
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+#youtubeWithHover > img:hover {
+  content: url('images/youtubeWithHover.svg');
+  box-shadow: 0px 1px 3px #666;
+}
+#facebookWithHover > img:hover {
+  content: url('images/facebookWithHover.svg');
+  box-shadow: 0px 1px 3px #666;
+}
+#instagramWithHover > img:hover {
+  content: url('images/instagramWithHover.svg');
+  box-shadow: 0px 1px 3px #666;
+}
+#twitterWithHover > img:hover {
+  content: url('images/twitterWithHover.svg');
+  box-shadow: 0px 1px 3px #666;
+}
+
+p {
+  margin-top: 2rem;
+}
+
+ul {
+  margin-top: 3rem;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
